@@ -1,0 +1,6 @@
+framework module FlatCreditCard {
+  umbrella header "FlatCreditCard-umbrella.h"
+
+  export *
+  module * { export * }
+}
