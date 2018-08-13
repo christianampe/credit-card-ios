@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FlatCreditCard_Example' do
+  pod 'FlatCreditCard', :path => '../'
+
+  target 'FlatCreditCard_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
