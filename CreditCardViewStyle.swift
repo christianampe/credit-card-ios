@@ -7,28 +7,28 @@
 
 import Foundation
 
-public enum CreditCardStyle {
+public enum CreditCardViewStyle {
     case fill(backgroundColor: UIColor)
     case clear(borderWidth: CGFloat, borderColor: UIColor)
 }
 
-public extension CreditCardStyle {
+public extension CreditCardViewStyle {
     public static let defaultBorderWidth: CGFloat = 1
     public static let defaultBorderColor: UIColor = .black
 }
 
-public extension CreditCardStyle {
+public extension CreditCardViewStyle {
     public static let defaultLogoFileName: String = "visa"
     public static let defaultLogoLightName: String = "-light"
     public static let defaultLogoFileExtension: String = ".png"
 }
 
 public extension CreditCardStyle {
-    public static let `default`: CreditCardStyle = .clear(borderWidth: defaultBorderWidth,
-                                                          borderColor: defaultBorderColor)
+    public static let `default`: CreditCardViewStyle = .clear(borderWidth: defaultBorderWidth,
+                                                              borderColor: defaultBorderColor)
 }
 
-public extension CreditCardStyle {
+public extension CreditCardViewStyle {
     public var backgroundColor: UIColor {
         switch self {
         case .clear:

@@ -20,35 +20,35 @@ open class CreditCardView: UIView {
     
     // MARK: IBInspectables
     @IBInspectable
-    open var number: String {
+    public var number: String = "••••  ••••  ••••  1234" {
         didSet {
             
         }
     }
     
     @IBInspectable
-    open var cvv: String {
+    public var cvv: String = "•••" {
         didSet {
             
         }
     }
     
     @IBInspectable
-    open var date: String {
+    open var date: String = "11/22" {
         didSet {
             
         }
     }
     
     @IBInspectable
-    open var name: String {
+    open var name: String = "Course Correct" {
         didSet {
             
         }
     }
     
     @IBInspectable
-    open var logo: String {
+    open var logo: String = CreditCardStyle.default.logoFileName {
         didSet {
             
         }
