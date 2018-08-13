@@ -20,14 +20,14 @@ open class CreditCardView: UIView {
     
     // MARK: IBInspectables
     @IBInspectable
-    public var number: String = "••••  ••••  ••••  1234" {
+    open var number: String = "••••  ••••  ••••  1234" {
         didSet {
             numberLabel.text = number
         }
     }
     
     @IBInspectable
-    public var cvv: String = "•••" {
+    open var cvv: String = "•••" {
         didSet {
             cvvLabel.text = cvv
         }
