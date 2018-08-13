@@ -104,11 +104,9 @@
 		607FACD21AFB9204008FA782 /* Example for FlatCreditCard */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				BF018AAC2122141B002244DD /* Interface */,
+				BF018AAA21221412002244DD /* Source */,
+				BF018AA921221405002244DD /* Utility */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for FlatCreditCard";
@@ -148,6 +146,40 @@
 				50B46689D62C6A19A6A8CB65 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		BF018AA921221405002244DD /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		BF018AAA21221412002244DD /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BF018AAB21221416002244DD /* Controller */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		BF018AAB21221416002244DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BF018AAC2122141B002244DD /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+			);
+			name = Interface;
 			sourceTree = "<group>";
 		};
 		F891C958AA06752E60FED5F0 /* Frameworks */ = {
