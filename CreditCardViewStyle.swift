@@ -18,6 +18,12 @@ public extension CreditCardStyle {
 }
 
 public extension CreditCardStyle {
+    public static let defaultLogoFileName: String = "visa"
+    public static let defaultLogoLightName: String = "-light"
+    public static let defaultLogoFileExtension: String = ".png"
+}
+
+public extension CreditCardStyle {
     public static let `default`: CreditCardStyle = .clear(borderWidth: defaultBorderWidth,
                                                           borderColor: defaultBorderColor)
 }
@@ -59,15 +65,23 @@ public extension CreditCardStyle {
         }
     }
     
+    public var logoFileName: String {
+        switch self {
+        case .clear:
+            return CreditCardStyle.defaultLogoFileName +
+                CreditCardStyle.defaultLogoFileExtension
+        case .fill:
+            return CreditCardStyle.defaultLogoFileName +
+                CreditCardStyle.defaultLogoLightName +
+                CreditCardStyle.defaultLogoFileExtension
+        }
+    }
+    
     public var numberSecurity: CardNumberSecurityStyle {
         return .default
     }
     
     public var ccvSecurity: CardCVVSecurityStyle {
         return .default
-    }
-    
-    public var logoFileName: String {
-        
     }
 }
