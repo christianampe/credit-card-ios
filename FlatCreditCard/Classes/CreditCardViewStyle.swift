@@ -1,5 +1,5 @@
 //
-//  CreditCardStyle.swift
+//  CreditCardViewStyle.swift
 //  FlatPaymentMethod
 //
 //  Created by Ampe on 8/10/18.
@@ -23,7 +23,7 @@ public extension CreditCardViewStyle {
     public static let defaultLogoFileExtension: String = ".png"
 }
 
-public extension CreditCardStyle {
+public extension CreditCardViewStyle {
     public static let `default`: CreditCardViewStyle = .clear(borderWidth: defaultBorderWidth,
                                                               borderColor: defaultBorderColor)
 }
@@ -68,12 +68,12 @@ public extension CreditCardViewStyle {
     public var logoFileName: String {
         switch self {
         case .clear:
-            return CreditCardStyle.defaultLogoFileName +
-                CreditCardStyle.defaultLogoFileExtension
+            return CreditCardViewStyle.defaultLogoFileName +
+                CreditCardViewStyle.defaultLogoFileExtension
         case .fill:
-            return CreditCardStyle.defaultLogoFileName +
-                CreditCardStyle.defaultLogoLightName +
-                CreditCardStyle.defaultLogoFileExtension
+            return CreditCardViewStyle.defaultLogoFileName +
+                CreditCardViewStyle.defaultLogoLightName +
+                CreditCardViewStyle.defaultLogoFileExtension
         }
     }
     

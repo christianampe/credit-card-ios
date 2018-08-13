@@ -48,7 +48,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    open var logo: String = CreditCardStyle.default.logoFileName {
+    open var logo: String = CreditCardViewStyle.default.logoFileName {
         didSet {
             
         }
