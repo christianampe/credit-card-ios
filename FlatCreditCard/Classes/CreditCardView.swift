@@ -22,35 +22,39 @@ open class CreditCardView: UIView {
     @IBInspectable
     public var number: String = "••••  ••••  ••••  1234" {
         didSet {
-            
+            numberLabel.text = number
         }
     }
     
     @IBInspectable
     public var cvv: String = "•••" {
         didSet {
-            
+            cvvLabel.text = cvv
         }
     }
     
     @IBInspectable
     open var date: String = "11/22" {
         didSet {
-            
+            dateLabel.text = date
         }
     }
     
     @IBInspectable
     open var name: String = "Course Correct" {
         didSet {
-            
+            nameLabel.text = name
         }
     }
     
     @IBInspectable
     open var logo: String = CreditCardViewStyle.default.logoFileName {
         didSet {
+            guard let image = UIImage(named: logo) else {
+                return
+            }
             
+            cardLogo.image = image
         }
     }
     
