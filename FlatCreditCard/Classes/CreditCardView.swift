@@ -5,7 +5,7 @@
 //  Created by Ampe on 8/6/18.
 //
 
-import Foundation
+import UIKit
 
 @IBDesignable
 open class CreditCardView: UIView {

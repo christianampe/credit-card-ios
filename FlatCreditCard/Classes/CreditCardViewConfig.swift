@@ -12,9 +12,19 @@ public struct CreditCardViewConfig {
     public let borderWidth: CGFloat
     public let borderColor: UIColor
     public let textColor: UIColor
-    public let logo: UIImage
-    public let numberGrouping: [Int]
+    public let numberGrouping: CreditCardViewNumberGroupingStyle
     public let numberSecurity: CardNumberSecurityStyle
     public let cvvLength: Int
     public let cvvSecurity: CardCVVSecurityStyle
+}
+
+public extension CreditCardViewConfig {
+    public static let `default` = CreditCardViewConfig(backgroundColor: .clear,
+                                                       borderWidth: 1,
+                                                       borderColor: .black,
+                                                       textColor: .black,
+                                                       numberGrouping: .default,
+                                                       numberSecurity: .show(last: 4),
+                                                       cvvLength: 3,
+                                                       cvvSecurity: .default)
 }
