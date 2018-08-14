@@ -84,4 +84,8 @@ public extension CreditCardViewStyle {
     public var cvvSecurity: CardCVVSecurityStyle {
         return .default
     }
+    
+    public var numberGrouping: CreditCardViewNumberGroupingStyle {
+        return .default
+    }
 }
