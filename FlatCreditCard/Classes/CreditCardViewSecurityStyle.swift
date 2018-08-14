@@ -14,11 +14,7 @@ public enum CardNumberSecurityStyle {
 }
 
 public extension CardNumberSecurityStyle {
-    public static var `default`: CardNumberSecurityStyle = .show(last: 4, secureCharacter: "•")
-}
-
-public extension CardNumberSecurityStyle {
-    func secureText(for input: String) -> String {
+    public func secureText(for input: String) -> String {
         switch self {
         case .on(let secureCharacter):
             return String(repeatElement(secureCharacter, count: input.count))
@@ -32,11 +28,27 @@ public extension CardNumberSecurityStyle {
     }
 }
 
+public extension CardNumberSecurityStyle {
+    public static var `default`: CardNumberSecurityStyle = .show(last: 4,
+                                                                 secureCharacter: "•")
+}
+
 public enum CardCVVSecurityStyle {
-    case on
+    case on(secureCharacter: Character)
     case off
 }
 
 public extension CardCVVSecurityStyle {
-    public static var `default`: CardCVVSecurityStyle = .on
+    public func secureText(for input: String) -> String {
+        switch self {
+        case .on(let secureCharacter):
+            return String(repeatElement(secureCharacter, count: input.count))
+        case .off:
+            return input
+        }
+    }
+}
+
+public extension CardCVVSecurityStyle {
+    public static var `default`: CardCVVSecurityStyle = .on(secureCharacter: "•")
 }
