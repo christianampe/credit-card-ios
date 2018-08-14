@@ -27,9 +27,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="LIA-lv-HRB"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="visa-white.png"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,7 +45,4 @@
             <point key="canvasLocation" x="136.80000000000001" y="132.26600985221674"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="visa-white.png" width="942" height="332"/>
-    </resources>
 </document>
