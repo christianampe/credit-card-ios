@@ -13,44 +13,44 @@ open class CreditCardView: UIView {
     // MARK: Views
     open weak var cardView: UIView!
     open weak var cardLogo: UIImageView!
-    open weak var numberLabel: UILabel!
+    open weak var expirationLabel: UILabel!
     open weak var cvvLabel: UILabel!
     open weak var dateLabel: UILabel!
     open weak var nameLabel: UILabel!
     
     // MARK: IBInspectables
     @IBInspectable
-    open var number: String = "••••  ••••  ••••  1234" {
+    open var number: String {
         didSet {
-            numberLabel.text = number
+            expirationLabel.text = number
         }
     }
     
     @IBInspectable
-    open var cvv: String = "•••" {
+    open var cvv: String {
         didSet {
             cvvLabel.text = cvv
         }
     }
     
     @IBInspectable
-    open var date: String = "11/22" {
+    open var expiration: String {
         didSet {
-            dateLabel.text = date
+            dateLabel.text = expiration
         }
     }
     
     @IBInspectable
-    open var name: String = "Course Correct" {
+    open var name: String {
         didSet {
             nameLabel.text = name
         }
     }
     
     @IBInspectable
-    open var logo: String = CreditCardViewStyle.default.logoFileName {
+    open var logoFileName: String {
         didSet {
-            guard let image = UIImage(named: logo) else {
+            guard let image = UIImage(named: logoFileName) else {
                 return
             }
             
@@ -71,7 +71,8 @@ open class CreditCardView: UIView {
     
     // MARK: Programmatic Initalizer
     public init(_ frame: CGRect) {
-        
+
+        // Create Views
         let cardView = UIView()
         self.cardView = cardView
         
@@ -79,7 +80,7 @@ open class CreditCardView: UIView {
         self.cardLogo = cardLogo
         
         let numberLabel = UILabel()
-        self.numberLabel = numberLabel
+        self.expirationLabel = numberLabel
         
         let cvvLabel = UILabel()
         self.cvvLabel = cvvLabel
@@ -90,10 +91,18 @@ open class CreditCardView: UIView {
         let nameLabel = UILabel()
         self.nameLabel = nameLabel
         
+        // Set Inital Values
+        number = CreditCard.default.number
+        cvv = CreditCard.default.cvv
+        expiration = CreditCard.default.expiration
+        name = CreditCard.default.name
+        logoFileName = CreditCard.default.style.logoFileName
+        
+        // Call Super Init
         super.init(frame: frame)
         
+        // Setup Methods
         initViews()
-        
         addViews()
         addConstraints()
     }
@@ -101,6 +110,7 @@ open class CreditCardView: UIView {
     // MARK: Storyboard Initalizer
     public required init?(coder aDecoder: NSCoder) {
         
+        // Create Views
         let cardView = UIView()
         self.cardView = cardView
         
@@ -108,7 +118,7 @@ open class CreditCardView: UIView {
         self.cardLogo = cardLogo
         
         let numberLabel = UILabel()
-        self.numberLabel = numberLabel
+        self.expirationLabel = numberLabel
         
         let cvvLabel = UILabel()
         self.cvvLabel = cvvLabel
@@ -119,10 +129,18 @@ open class CreditCardView: UIView {
         let nameLabel = UILabel()
         self.nameLabel = nameLabel
         
+        // Set Inital Values
+        number = CreditCard.default.number
+        cvv = CreditCard.default.cvv
+        expiration = CreditCard.default.expiration
+        name = CreditCard.default.name
+        logoFileName = CreditCard.default.style.logoFileName
+        
+        // Call Super Init
         super.init(coder: aDecoder)
         
+        // Setup Methods
         initViews()
-        
         addViews()
         addConstraints()
     }
@@ -133,7 +151,6 @@ private extension CreditCardView {
     
     // MARK: Style Views
     func initViews() {
-        
         cardView.layer.borderWidth = 1.0
         cardView.layer.cornerRadius = 8.0
         cardView.layer.borderColor = UIColor.black.cgColor
@@ -141,10 +158,10 @@ private extension CreditCardView {
         cardLogo.contentMode = .scaleAspectFit
         cardLogo.clipsToBounds = true
         
-        numberLabel.adjustsFontSizeToFitWidth = true
-        numberLabel.minimumScaleFactor = 0.1
-        numberLabel.lineBreakMode = .byClipping
-        numberLabel.numberOfLines = 0
+        expirationLabel.adjustsFontSizeToFitWidth = true
+        expirationLabel.minimumScaleFactor = 0.1
+        expirationLabel.lineBreakMode = .byClipping
+        expirationLabel.numberOfLines = 0
         
         cvvLabel.adjustsFontSizeToFitWidth = true
         cvvLabel.minimumScaleFactor = 0.1
@@ -164,10 +181,9 @@ private extension CreditCardView {
     
     // MARK: Add Views To Super View
     func addViews() {
-        
         addSubview(cardView)
         addSubview(cardLogo)
-        addSubview(numberLabel)
+        addSubview(expirationLabel)
         addSubview(cvvLabel)
         addSubview(dateLabel)
         addSubview(nameLabel)
@@ -175,7 +191,6 @@ private extension CreditCardView {
     
     // MARK: Call Add Constraints Methods
     func addConstraints() {
-        
         addCardViewConstraints()
         addCardLogoConstraints()
         addNumberLabelConstraints()
@@ -186,7 +201,6 @@ private extension CreditCardView {
     
     // MARK: Add Constraints To Card View
     func addCardViewConstraints() {
-        
         cardView.translatesAutoresizingMaskIntoConstraints = false
         
         cardView.widthAnchor.constraint(equalTo: cardView.heightAnchor, multiplier: CreditCardViewConstants.aspectRatio).isActive = true
@@ -206,7 +220,6 @@ private extension CreditCardView {
     
     // MARK: Add Constraints To Card Logo
     func addCardLogoConstraints() {
-        
         cardLogo.translatesAutoresizingMaskIntoConstraints = false
         
         cardLogo.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
@@ -217,45 +230,37 @@ private extension CreditCardView {
     
     // MARK: Add Constraints To Name Label
     func addNameLabelConstraints() {
-        
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         nameLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
-        
         nameLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -cardView.frame.height/10).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/10).isActive = true
     }
     
     // MARK: Add Constraints To Date Label
     func addDateLabelConstraints() {
-        
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         
         dateLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
-        
         dateLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
         dateLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/15).isActive = true
     }
     
     // MARK: Add Constraints To CVV Label
     func addCVVLabelConstraints() {
-        
         cvvLabel.translatesAutoresizingMaskIntoConstraints = false
         
         cvvLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
-        
         cvvLabel.bottomAnchor.constraint(equalTo: dateLabel.topAnchor, constant: -cardView.frame.height/20).isActive = true
         cvvLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/20).isActive = true
     }
     
     // MARK: Add Constraints To Number Label
     func addNumberLabelConstraints() {
-        
-        numberLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        numberLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
-        
-        numberLabel.bottomAnchor.constraint(equalTo: cvvLabel.topAnchor).isActive = true
-        numberLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/10).isActive = true
+        expirationLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        expirationLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
+        expirationLabel.bottomAnchor.constraint(equalTo: cvvLabel.topAnchor).isActive = true
+        expirationLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/10).isActive = true
     }
 }
