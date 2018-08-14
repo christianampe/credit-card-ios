@@ -22,7 +22,10 @@ open class CreditCardView: UIView {
     open var viewModel: CreditCardViewModel! {
         didSet {
             number = viewModel.number
-            
+            cvv = viewModel.cvv
+            expiration = viewModel.expiration
+            name = viewModel.name
+            logo = viewModel.logo
         }
     }
     
@@ -56,13 +59,9 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    open var logoFileName: String = CreditCard.default.style.logoFileName {
+    open var logo: UIImage = CreditCard.default.style.logo {
         didSet {
-            guard let image = UIImage(named: logoFileName) else {
-                return
-            }
-            
-            cardLogo.image = image
+            cardLogo.image = logo
         }
     }
     
@@ -266,6 +265,6 @@ private extension CreditCardView {
         cvv = card.cvv
         expiration = card.expiration
         name = card.name
-        logoFileName = card.style.logoFileName
+        logo = card.style.logo
     }
 }

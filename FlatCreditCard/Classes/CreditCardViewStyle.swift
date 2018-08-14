@@ -65,15 +65,15 @@ public extension CreditCardViewStyle {
         }
     }
     
-    public var logoFileName: String {
+    public var logo: UIImage {
         switch self {
         case .clear:
-            return CreditCardViewStyle.defaultLogoFileName +
-                CreditCardViewStyle.defaultLogoFileExtension
+            return UIImage(named: CreditCardViewStyle.defaultLogoFileName +
+                CreditCardViewStyle.defaultLogoFileExtension)!
         case .fill:
-            return CreditCardViewStyle.defaultLogoFileName +
+            return UIImage(named: CreditCardViewStyle.defaultLogoFileName +
                 CreditCardViewStyle.defaultLogoLightName +
-                CreditCardViewStyle.defaultLogoFileExtension
+                CreditCardViewStyle.defaultLogoFileExtension)!
         }
     }
     
