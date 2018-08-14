@@ -33,10 +33,10 @@ Pod::Spec.new do |s|
     s.swift_version         = '4.1'
     
     s.source_files = 'FlatCreditCard/Classes/**/*'
-    s.resources = 'FlatCreditCard/Assets/*.xcassets'
     
     s.resource_bundles = {
-        'FlatPaymentMethod' => ['FlatCreditCard/Assets/*.png']
+        'FlatPaymentMethod' => ['FlatCreditCard/Assets/*.png',
+                                'FlatCreditCard/Assets/*.xcassets']
     }
     
     # s.public_header_files = 'Pod/Classes/**/*.h'

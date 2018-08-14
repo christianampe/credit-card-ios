@@ -20,10 +20,10 @@
   },
   "swift_version": "4.1",
   "source_files": "FlatCreditCard/Classes/**/*",
-  "resources": "FlatCreditCard/Assets/*.xcassets",
   "resource_bundles": {
     "FlatPaymentMethod": [
-      "FlatCreditCard/Assets/*.png"
+      "FlatCreditCard/Assets/*.png",
+      "FlatCreditCard/Assets/*.xcassets"
     ]
   }
 }
