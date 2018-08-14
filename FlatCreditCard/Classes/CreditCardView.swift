@@ -59,7 +59,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    open var logo: UIImage = CreditCard.default.style.logo {
+    open var logo: UIImage  {
         didSet {
             cardLogo.image = logo
         }
