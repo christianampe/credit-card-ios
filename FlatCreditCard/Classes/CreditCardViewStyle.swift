@@ -58,16 +58,4 @@ public extension CreditCardViewStyle {
             return .white
         }
     }
-    
-    public var numberSecurity: CardNumberSecurityStyle {
-        return .default
-    }
-    
-    public var cvvSecurity: CardCVVSecurityStyle {
-        return .default
-    }
-    
-    public var numberGrouping: CreditCardViewNumberGroupingStyle {
-        return .default
-    }
 }

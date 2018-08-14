@@ -12,6 +12,11 @@ public protocol CreditCardViewModel {
     
     var delegate: CreditCardViewModelDelegate { get set }
     
+    var groupingStyle: CreditCardViewNumberGroupingStyle { get set }
+    var numberSecurityStyle: CardNumberSecurityStyle { get set }
+    var cvvSecurityStyle: CardCVVSecurityStyle { get set }
+    var style: CreditCardViewStyle { get set }
+    
     var number: String { get }
     var cvv: String { get }
     var expiration: String { get }
