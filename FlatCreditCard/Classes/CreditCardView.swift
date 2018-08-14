@@ -59,9 +59,13 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    open var logo: UIImage = #imageLiteral(resourceName: "visa.png") {
+    open var logo: UIImage? = nil {
         didSet {
-            cardLogo.image = logo
+            guard let image = logo else {
+                return
+            }
+            
+            cardLogo.image = image
         }
     }
     
@@ -153,6 +157,8 @@ private extension CreditCardView {
         
         cardLogo.contentMode = .scaleAspectFit
         cardLogo.clipsToBounds = true
+        cardLogo.layer.borderWidth = 1
+        cardLogo.layer.borderColor = UIColor.black.cgColor
         
         numberLabel.adjustsFontSizeToFitWidth = true
         numberLabel.minimumScaleFactor = 0.1
@@ -265,6 +271,5 @@ private extension CreditCardView {
         cvv = card.cvv
         expiration = card.expiration
         name = card.name
-        logo = #imageLiteral(resourceName: "visa.png")
     }
 }
