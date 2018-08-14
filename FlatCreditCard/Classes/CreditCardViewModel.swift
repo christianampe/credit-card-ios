@@ -29,11 +29,3 @@ public protocol CreditCardViewModel {
     func name(for input: String) -> String
     func logo(for input: String) -> String
 }
-
-public protocol CreditCardViewModelDelegate {
-    func numberUpdated(to number: String)
-    func cvvUpdated(to cvv: String)
-    func expirationUpdated(to expiration: String)
-    func nameUpdated(to name: String)
-    func logoUpdated(to logo: UIImage?)
-}
