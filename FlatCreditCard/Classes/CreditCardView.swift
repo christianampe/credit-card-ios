@@ -18,18 +18,21 @@ open class CreditCardView: UIView {
     open weak var dateLabel: UILabel!
     open weak var nameLabel: UILabel!
     
+    // MARK: Properties
+    open var style: CreditCardViewStyle = .default
+    
     // MARK: IBInspectables
     @IBInspectable
     open var number: String = CreditCard.default.number {
         didSet {
-            expirationLabel.text = number
+            expirationLabel.text = style.numberSecurity.secureText(for: number)
         }
     }
     
     @IBInspectable
     open var cvv: String = CreditCard.default.cvv {
         didSet {
-            cvvLabel.text = cvv
+            cvvLabel.text = style.cvvSecurity.secureText(for: cvv)
         }
     }
     
@@ -259,5 +262,6 @@ private extension CreditCardView {
         expiration = card.expiration
         name = card.name
         logoFileName = card.style.logoFileName
+        style = card.style
     }
 }

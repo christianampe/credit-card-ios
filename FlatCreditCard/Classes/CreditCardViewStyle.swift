@@ -81,7 +81,7 @@ public extension CreditCardViewStyle {
         return .default
     }
     
-    public var ccvSecurity: CardCVVSecurityStyle {
+    public var cvvSecurity: CardCVVSecurityStyle {
         return .default
     }
 }
