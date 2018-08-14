@@ -214,16 +214,6 @@ private extension CreditCardView {
         cardView.layoutIfNeeded()
     }
     
-    // MARK: Add Constraints To Card Logo
-    func addCardLogoConstraints() {
-        cardLogo.translatesAutoresizingMaskIntoConstraints = false
-        
-        cardLogo.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
-        cardLogo.topAnchor.constraint(equalTo: cardView.topAnchor, constant: cardView.frame.height/10).isActive = true
-        cardLogo.heightAnchor.constraint(equalToConstant: cardView.frame.height/5).isActive = true
-        cardLogo.widthAnchor.constraint(equalToConstant: cardView.frame.width/5).isActive = true
-    }
-    
     // MARK: Add Constraints To Name Label
     func addNameLabelConstraints() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -258,6 +248,16 @@ private extension CreditCardView {
         numberLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
         numberLabel.bottomAnchor.constraint(equalTo: cvvLabel.topAnchor).isActive = true
         numberLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/10).isActive = true
+    }
+    
+    // MARK: Add Constraints To Card Logo
+    func addCardLogoConstraints() {
+        cardLogo.translatesAutoresizingMaskIntoConstraints = false
+        
+        cardLogo.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
+        cardLogo.topAnchor.constraint(equalTo: cardView.topAnchor, constant: cardView.frame.height/10).isActive = true
+        cardLogo.heightAnchor.constraint(equalToConstant: cardView.frame.height/5).isActive = true
+        cardLogo.widthAnchor.constraint(equalToConstant: cardView.frame.width/5).isActive = true
     }
     
     func setupCard(_ card: CreditCard = .default) {
