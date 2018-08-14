@@ -24,7 +24,7 @@ public extension CreditCardViewConfig {
                                                        borderColor: .black,
                                                        textColor: .black,
                                                        numberGrouping: .default,
-                                                       numberSecurity: .show(last: 4),
+                                                       numberSecurity: .default,
                                                        cvvLength: 3,
                                                        cvvSecurity: .default)
 }
