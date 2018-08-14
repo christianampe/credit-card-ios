@@ -70,7 +70,8 @@ open class CreditCardView: UIView {
     }
     
     // MARK: Programmatic Initalizer
-    public init(_ frame: CGRect) {
+    public init(_ frame: CGRect,
+                card: CreditCard = .default) {
 
         // Create Views
         let cardView = UIView()
@@ -98,6 +99,7 @@ open class CreditCardView: UIView {
         initViews()
         addViews()
         addConstraints()
+        setupCard(card)
     }
     
     // MARK: Storyboard Initalizer
@@ -129,6 +131,7 @@ open class CreditCardView: UIView {
         initViews()
         addViews()
         addConstraints()
+        setupCard()
     }
 }
 
@@ -248,5 +251,13 @@ private extension CreditCardView {
         expirationLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
         expirationLabel.bottomAnchor.constraint(equalTo: cvvLabel.topAnchor).isActive = true
         expirationLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/10).isActive = true
+    }
+    
+    func setupCard(_ card: CreditCard = .default) {
+        number = card.number
+        cvv = card.cvv
+        expiration = card.expiration
+        name = card.name
+        logoFileName = card.style.logoFileName
     }
 }
