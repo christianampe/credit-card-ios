@@ -20,35 +20,35 @@ open class CreditCardView: UIView {
     
     // MARK: IBInspectables
     @IBInspectable
-    open var number: String {
+    open var number: String = CreditCard.default.number {
         didSet {
             expirationLabel.text = number
         }
     }
     
     @IBInspectable
-    open var cvv: String {
+    open var cvv: String = CreditCard.default.cvv {
         didSet {
             cvvLabel.text = cvv
         }
     }
     
     @IBInspectable
-    open var expiration: String {
+    open var expiration: String = CreditCard.default.expiration {
         didSet {
             dateLabel.text = expiration
         }
     }
     
     @IBInspectable
-    open var name: String {
+    open var name: String = CreditCard.default.name {
         didSet {
             nameLabel.text = name
         }
     }
     
     @IBInspectable
-    open var logoFileName: String {
+    open var logoFileName: String = CreditCard.default.style.logoFileName {
         didSet {
             guard let image = UIImage(named: logoFileName) else {
                 return
@@ -91,13 +91,6 @@ open class CreditCardView: UIView {
         let nameLabel = UILabel()
         self.nameLabel = nameLabel
         
-        // Set Inital Values
-        number = CreditCard.default.number
-        cvv = CreditCard.default.cvv
-        expiration = CreditCard.default.expiration
-        name = CreditCard.default.name
-        logoFileName = CreditCard.default.style.logoFileName
-        
         // Call Super Init
         super.init(frame: frame)
         
@@ -129,13 +122,6 @@ open class CreditCardView: UIView {
         let nameLabel = UILabel()
         self.nameLabel = nameLabel
         
-        // Set Inital Values
-        number = CreditCard.default.number
-        cvv = CreditCard.default.cvv
-        expiration = CreditCard.default.expiration
-        name = CreditCard.default.name
-        logoFileName = CreditCard.default.style.logoFileName
-        
         // Call Super Init
         super.init(coder: aDecoder)
         
@@ -151,8 +137,8 @@ private extension CreditCardView {
     
     // MARK: Style Views
     func initViews() {
-        cardView.layer.borderWidth = 1.0
-        cardView.layer.cornerRadius = 8.0
+        cardView.layer.borderWidth = 1
+        cardView.layer.cornerRadius = 8
         cardView.layer.borderColor = UIColor.black.cgColor
         
         cardLogo.contentMode = .scaleAspectFit
