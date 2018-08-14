@@ -59,7 +59,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    open var logo: UIImage = #imageLiteral(resourceName: <#T##String#>) {
+    open var logo: UIImage = ImageHelper.image(for: "visa")! {
         didSet {
             cardLogo.image = logo
         }
@@ -265,6 +265,6 @@ private extension CreditCardView {
         cvv = card.cvv
         expiration = card.expiration
         name = card.name
-        logo = card.style.logo
+        logo = ImageHelper.image(for: "visa")!
     }
 }

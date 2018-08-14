@@ -7,14 +7,8 @@
 
 import Foundation
 
-public struct ImageHelper {
-    private static var podsBundle: Bundle {
-        let bundle = Bundle(for: ImageHelper.self)
-        return Bundle(url: bundle.url(forResource: "YourClass",
-                                      withExtension: "bundle")!)!
-    }
-    
-    private static func imageFor(name imageName: String) -> UIImage {
-        return UIImage.init(named: imageName, in: podsBundle, compatibleWith: nil)!
+public class ImageHelper {
+    public static func image(for name: String) -> UIImage? {
+        return UIImage(named: name, in: Bundle(for: self), compatibleWith: nil)
     }
 }
