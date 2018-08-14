@@ -11,23 +11,15 @@ import UIKit
 open class CreditCardView: UIView {
     
     // MARK: Views
-    open weak var cardView: UIView!
-    open weak var cardLogo: UIImageView!
-    open weak var numberLabel: UILabel!
-    open weak var cvvLabel: UILabel!
-    open weak var expirationLabel: UILabel!
-    open weak var nameLabel: UILabel!
+    private weak var cardView: UIView!
+    private weak var cardLogo: UIImageView!
+    private weak var numberLabel: UILabel!
+    private weak var cvvLabel: UILabel!
+    private weak var expirationLabel: UILabel!
+    private weak var nameLabel: UILabel!
     
     // MARK: Properties
-    open var viewModel: CreditCardViewModel! {
-        didSet {
-            number = viewModel.number
-            cvv = viewModel.cvv
-            expiration = viewModel.expiration
-            name = viewModel.name
-            logo = viewModel.logo
-        }
-    }
+    open var viewModel: CreditCardViewModel!
     
     // MARK: IBInspectables
     @IBInspectable
@@ -271,5 +263,28 @@ private extension CreditCardView {
         cvv = card.cvv
         expiration = card.expiration
         name = card.name
+    }
+}
+
+// MARK: - Credit Card View Model Delegate Conformance
+extension CreditCardView: CreditCardViewModelDelegate {
+    public func numberUpdated(to number: String) {
+        self.number = number
+    }
+    
+    public func cvvUpdated(to cvv: String) {
+        self.cvv = cvv
+    }
+    
+    public func expirationUpdated(to expiration: String) {
+        self.expiration = expiration
+    }
+    
+    public func nameUpdated(to name: String) {
+        self.name = name
+    }
+    
+    public func logoUpdated(to logo: UIImage?) {
+        self.logo = logo
     }
 }

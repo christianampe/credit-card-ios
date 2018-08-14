@@ -8,13 +8,21 @@
 import Foundation
 
 public protocol CreditCardViewModel {
-    var card: CreditCard { get set }
+    init(delegate: CreditCardViewModelDelegate, card: CreditCard)
+    
+    var delegate: CreditCardViewModelDelegate { get set }
     
     var number: String { get }
     var cvv: String { get }
     var expiration: String { get }
     var name: String { get }
-    var logo: UIImage { get }
+    var logo: UIImage? { get }
+    
+    func number(for input: String) -> String
+    func cvv(for input: String) -> String
+    func expiration(for input: String) -> String
+    func name(for input: String) -> String
+    func logo(for input: String) -> String
 }
 
 public protocol CreditCardViewModelDelegate {
@@ -22,5 +30,5 @@ public protocol CreditCardViewModelDelegate {
     func cvvUpdated(to cvv: String)
     func expirationUpdated(to expiration: String)
     func nameUpdated(to name: String)
-    func logoUpdated(to logo: UIImage)
+    func logoUpdated(to logo: UIImage?)
 }
