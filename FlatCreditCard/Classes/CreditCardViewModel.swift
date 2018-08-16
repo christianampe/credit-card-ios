@@ -8,17 +8,17 @@
 import Foundation
 
 public class CreditCardViewModel {
-    var number: String
-    var cvv: String
-    var expiration: String
-    var name: String
+    private var number: String
+    private var cvv: String
+    private var expiration: String
+    private var name: String
     
-    var logo: UIImage?
+    private var logo: UIImage?
     
-    var groupingStyle: CreditCardViewNumberGroupingStyle
-    var numberSecurityStyle: CardNumberSecurityStyle
-    var cvvSecurityStyle: CardCVVSecurityStyle
-    var style: CreditCardViewStyle
+    private var groupingStyle: CreditCardViewNumberGroupingStyle
+    private var numberSecurityStyle: CardNumberSecurityStyle
+    private var cvvSecurityStyle: CardCVVSecurityStyle
+    private var style: CreditCardViewStyle
     
     var delegate: CreditCardViewModelDelegate
     
@@ -43,24 +43,55 @@ public class CreditCardViewModel {
     }
 }
 
+public extension CreditCardViewModel {
+    func updateNumber(to value: String) {
+        self.number = value
+        
+        delegate.numberUpdated(to: number(for: value))
+    }
+    
+    func updateCVV(to value: String) {
+        self.cvv = value
+        
+        delegate.cvvUpdated(to: cvv(for: value))
+    }
+    
+    func updateExpiration(to value: String) {
+        self.expiration = value
+        
+        delegate.expirationUpdated(to: expiration(for: value))
+    }
+    
+    func updateName(to value: String) {
+        self.name = value
+        
+        delegate.nameUpdated(to: name(for: value))
+    }
+}
+
+// MARK: - View Model Data Source Conformance
 extension CreditCardViewModel: CreditCardViewModelDataSource {
     public func number(for input: String) -> String {
+        let grouped = groupingStyle.groupedText(for: input)
+        let secured = numberSecurityStyle.secureText(for: grouped)
         
+        return secured
     }
     
     public func cvv(for input: String) -> String {
-        
+        let secured = cvvSecurityStyle.secureText(for: input)
+        return secured
     }
     
     public func expiration(for input: String) -> String {
-        
+        return input
     }
     
     public func name(for input: String) -> String {
-        
+        return name
     }
     
     public func logo(for input: String) -> UIImage? {
-        
+        return nil
     }
 }
