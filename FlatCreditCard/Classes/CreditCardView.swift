@@ -268,7 +268,7 @@ private extension CreditCardView {
     }
     
     func setupViewModel() {
-        viewModel = CreditCardViewModel(delegate: self)
+        viewModel = CreditCardViewModel(self)
     }
 }
 
