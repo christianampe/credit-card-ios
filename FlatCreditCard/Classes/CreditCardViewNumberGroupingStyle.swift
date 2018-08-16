@@ -27,19 +27,19 @@ public extension CreditCardViewNumberGroupingStyle {
             var input: String = input
             var output: String.SubSequence = ""
             
-            grouping.forEach { group in
+            for group in grouping {
                 guard !input.isEmpty else {
-                    return
+                    break
                 }
-                
-                output.append(contentsOf: separator)
                 
                 guard input.count >= group else {
                     output.append(contentsOf: input)
-                    return
+                    break
                 }
                 
                 output.append(contentsOf: input.suffix(group))
+                output.append(contentsOf: separator)
+                
                 input.removeLast(group)
             }
             
