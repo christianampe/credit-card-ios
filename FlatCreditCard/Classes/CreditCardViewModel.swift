@@ -5,7 +5,7 @@
 //  Created by Ampe on 8/13/18.
 //
 
-import Foundation
+import UIKit
 
 public protocol CreditCardViewModel: CreditCardViewModelDataSource {
     

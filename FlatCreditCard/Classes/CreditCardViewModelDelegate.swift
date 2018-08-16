@@ -5,7 +5,7 @@
 //  Created by Ampe on 8/14/18.
 //
 
-import Foundation
+import UIKit
 
 public protocol CreditCardViewModelDelegate {
     func numberUpdated(to number: String)
