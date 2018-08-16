@@ -123,6 +123,7 @@ open class CreditCardView: UIView {
         // Setup Methods
         initViews()
         styleViews(.default)
+        setViewProperties()
         addViews()
         addConstraints()
     }
@@ -155,6 +156,7 @@ open class CreditCardView: UIView {
         // Setup Methods
         initViews()
         styleViews(.default)
+        setViewProperties()
         addViews()
         addConstraints()
     }
