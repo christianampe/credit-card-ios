@@ -23,7 +23,7 @@ open class CreditCardView: UIView {
     
     // MARK: IBInspectables
     @IBInspectable
-    public var number: String = CreditCard.default.number {
+    public var number: String = CreditCardViewConstants.defaultName {
         didSet {
             guard let viewModel = viewModel else {
                 numberLabel.text = number
@@ -35,7 +35,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    public var cvv: String = CreditCard.default.cvv {
+    public var cvv: String = CreditCardViewConstants.defaultCVV {
         didSet {
             guard let viewModel = viewModel else {
                 cvvLabel.text = cvv
@@ -47,7 +47,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    public var expiration: String = CreditCard.default.expiration {
+    public var expiration: String = CreditCardViewConstants.defaultExpiration {
         didSet {
             guard let viewModel = viewModel else {
                 expirationLabel.text = expiration
@@ -59,7 +59,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    public var name: String = CreditCard.default.name {
+    public var name: String = CreditCardViewConstants.defaultName {
         didSet {
             guard let viewModel = viewModel else {
                 nameLabel.text = name
@@ -71,7 +71,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    public var logo: UIImage? = nil {
+    public var logo: UIImage? = CreditCardViewConstants.defaultLogo {
         didSet {
             guard let viewModel = viewModel else {
                 guard let image = logo else {
@@ -217,6 +217,15 @@ private extension CreditCardView {
         cvvLabel.textColor = color
         expirationLabel.textColor = color
         nameLabel.textColor = color
+    }
+    
+    // MARK: Set Inital Values
+    func setViewProperties() {
+        number = CreditCardViewConstants.defaultNumber
+        cvv = CreditCardViewConstants.defaultCVV
+        expiration = CreditCardViewConstants.defaultExpiration
+        name = CreditCardViewConstants.defaultName
+        logo = CreditCardViewConstants.defaultLogo
     }
     
     // MARK: Add Views To Super View
