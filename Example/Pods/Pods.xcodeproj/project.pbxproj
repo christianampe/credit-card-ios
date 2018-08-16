@@ -18,7 +18,6 @@
 		88BE095E6C2FECEBB3C4031EA7B78C3C /* FlatCreditCard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5368C85A1F68C448DFAD75787537A0D8 /* FlatCreditCard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		924714AE49F0253BE0325A9C60A15AB1 /* Pods-FlatCreditCard_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 588270ED5B1B5D01506E098F2A7F79C4 /* Pods-FlatCreditCard_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9404D61072B6319DF8F2E938F3E51504 /* CreditCardViewNumberGroupingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A2579540742221AC50708169E1BF60 /* CreditCardViewNumberGroupingStyle.swift */; };
-		95748EC3E12D4E5AE51C8FD15EA270BB /* CreditCardViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B644BB0C25462FCC1B3278941653281F /* CreditCardViewConfig.swift */; };
 		A5D7987CBCED79176CD55180846053BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		B374F0374ACB2156F644D864FC42D8B0 /* Pods-FlatCreditCard_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 65078F504552411BC4EFAC4AD38499E1 /* Pods-FlatCreditCard_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF65E90A212334A500715E12 /* CreditCardViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF65E909212334A500715E12 /* CreditCardViewModelDelegate.swift */; };
@@ -76,7 +75,6 @@
 		AAA9D33BE9D52F72077CFF12C6F9AE0E /* Pods-FlatCreditCard_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlatCreditCard_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AD27FEA0EE59DEF9CE0C09E3683FBF6D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		AF9F8382D07526935E30F883E6CB202B /* FlatCreditCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlatCreditCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B644BB0C25462FCC1B3278941653281F /* CreditCardViewConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardViewConfig.swift; path = FlatCreditCard/Classes/CreditCardViewConfig.swift; sourceTree = "<group>"; };
 		B81C06F93DAAF1FE5A51F8B38CC0CFBF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B88AF73890C220B5577C5F37331C7D89 /* CreditCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCard.swift; path = FlatCreditCard/Classes/CreditCard.swift; sourceTree = "<group>"; };
 		BF65E909212334A500715E12 /* CreditCardViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreditCardViewModelDelegate.swift; path = FlatCreditCard/Classes/CreditCardViewModelDelegate.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 			children = (
 				B88AF73890C220B5577C5F37331C7D89 /* CreditCard.swift */,
 				8C7AFFF442DC9D4B4069001FDB9602C5 /* CreditCardView.swift */,
-				B644BB0C25462FCC1B3278941653281F /* CreditCardViewConfig.swift */,
 				947F865003D8C3694FCD0FD9D09FB101 /* CreditCardViewConstants.swift */,
 				F9CFA4AA1B311D82CE64473D467EA5E9 /* CreditCardViewModel.swift */,
 				BF65E909212334A500715E12 /* CreditCardViewModelDelegate.swift */,
@@ -389,7 +386,6 @@
 				68CBA0C47459393EA99F3A533259BC6C /* CreditCard.swift in Sources */,
 				12948F94E14FE40FFA59E6BA34FEF644 /* CreditCardView.swift in Sources */,
 				BF65E90A212334A500715E12 /* CreditCardViewModelDelegate.swift in Sources */,
-				95748EC3E12D4E5AE51C8FD15EA270BB /* CreditCardViewConfig.swift in Sources */,
 				8802AE213A8561EFB711AB9CDEAF6503 /* CreditCardViewConstants.swift in Sources */,
 				4099BA6FBCA2059DF168D665D86F16E9 /* CreditCardViewModel.swift in Sources */,
 				9404D61072B6319DF8F2E938F3E51504 /* CreditCardViewNumberGroupingStyle.swift in Sources */,

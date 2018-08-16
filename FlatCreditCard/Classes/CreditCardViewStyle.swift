@@ -5,7 +5,7 @@
 //  Created by Ampe on 8/10/18.
 //
 
-import Foundation
+import UIKit
 
 public enum CreditCardViewStyle {
     case fill(backgroundColor: UIColor)
