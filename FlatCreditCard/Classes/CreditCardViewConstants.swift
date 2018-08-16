@@ -18,6 +18,6 @@ public extension CreditCardViewConstants {
     public static let defaultCVV: String = "046"
     public static let defaultExpiration: String = "12/24"
     public static let defaultName: String = "Christian Ampe"
-    public static let defaultLogo: UIImage = #imageLiteral(resourceName: "maestro")
+    public static let defaultLogo: UIImage = #imageLiteral(resourceName: "mastercard")
 }
 
