@@ -12,5 +12,5 @@ public protocol CreditCardViewModelDataSource {
     func cvv(for input: String) -> String
     func expiration(for input: String) -> String
     func name(for input: String) -> String
-    func logo(for input: String) -> String
+    func logo(for input: String) -> UIImage?
 }
