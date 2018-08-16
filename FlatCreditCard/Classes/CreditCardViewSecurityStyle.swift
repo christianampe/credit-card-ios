@@ -19,6 +19,10 @@ public extension CardNumberSecurityStyle {
         case .on(let secureCharacter):
             return String(repeatElement(secureCharacter, count: input.count))
         case .show(let lastNCharacterToShow, let secureCharacter):
+            guard input.count >= lastNCharacterToShow else {
+                return String(repeatElement(secureCharacter, count: input.count))
+            }
+            
             var secureText = String(repeatElement(secureCharacter, count: input.count - lastNCharacterToShow))
             secureText.append(contentsOf: input.suffix(4))
             return secureText
@@ -29,8 +33,9 @@ public extension CardNumberSecurityStyle {
 }
 
 public extension CardNumberSecurityStyle {
-    public static var `default`: CardNumberSecurityStyle = .show(last: 4,
-                                                                 secureCharacter: "•")
+//    public static var `default`: CardNumberSecurityStyle = .show(last: 4,
+//                                                                 secureCharacter: "•")
+    public static let `default`: CardNumberSecurityStyle = .off
 }
 
 public enum CardCVVSecurityStyle {

@@ -34,13 +34,13 @@ public extension CreditCardViewNumberGroupingStyle {
                 
                 guard input.count >= group else {
                     output.append(contentsOf: input)
-                    break
+                    return String(output)
                 }
                 
-                output.append(contentsOf: input.suffix(group))
+                output.append(contentsOf: input.prefix(group))
                 output.append(contentsOf: separator)
                 
-                input.removeLast(group)
+                input.removeFirst(group)
             }
             
             switch shouldAddRemainderSection {
