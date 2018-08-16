@@ -73,11 +73,16 @@ open class CreditCardView: UIView {
     @IBInspectable
     public var logo: UIImage? = nil {
         didSet {
-            guard let image = logo else {
+            guard let viewModel = viewModel else {
+                guard let image = logo else {
+                    return
+                }
+                
+                cardLogo.image = image
                 return
             }
             
-            cardLogo.image = image
+            viewModel.updateLogo(to: logo)
         }
     }
     

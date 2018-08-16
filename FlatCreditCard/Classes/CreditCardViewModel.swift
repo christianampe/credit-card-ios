@@ -35,4 +35,5 @@ public protocol CreditCardViewModel: CreditCardViewModelDataSource {
     func updateCVV(to value: String)
     func updateExpiration(to value: String)
     func updateName(to value: String)
+    func updateLogo(to value: UIImage?)
 }
