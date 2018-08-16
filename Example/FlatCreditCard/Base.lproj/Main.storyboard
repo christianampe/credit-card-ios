@@ -27,6 +27,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="LIA-lv-HRB"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="mastercard"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="4000  2464  6280  8686"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cvv" value="268"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="expiration" value="12/22"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="Christian Ampe"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Account Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w0b-qT-hIX">
                                 <rect key="frame" x="24" y="260" width="327" height="17"/>
@@ -58,4 +65,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="132.26600985221674"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mastercard" width="117" height="72.440818786621094"/>
+    </resources>
 </document>
