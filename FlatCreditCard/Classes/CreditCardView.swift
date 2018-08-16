@@ -166,7 +166,7 @@ public extension CreditCardView {
         self.viewModel = viewModel
     }
     
-    func setStyle(_ style: CreditCardViewStyle = .default) {
+    func setStyle(_ style: CreditCardViewStyle) {
         styleViews(style)
     }
 }
@@ -176,7 +176,7 @@ private extension CreditCardView {
     
     // MARK: Inital View Setup
     func initViews() {
-        cardView.layer.cornerRadius = 8
+        cardView.layer.cornerRadius = 5
         
         cardLogo.contentMode = .scaleAspectFit
         cardLogo.clipsToBounds = true
