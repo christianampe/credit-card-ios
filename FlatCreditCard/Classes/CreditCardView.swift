@@ -207,6 +207,16 @@ private extension CreditCardView {
         cardView.layer.borderWidth = style.borderWidth
         cardView.backgroundColor = style.backgroundColor
         cardView.layer.borderColor = style.borderColor.cgColor
+        
+        setTextColor(style.textColor)
+    }
+    
+    // MARK: Set Global Text Color
+    func setTextColor(_ color: UIColor) {
+        numberLabel.textColor = color
+        cvvLabel.textColor = color
+        expirationLabel.textColor = color
+        nameLabel.textColor = color
     }
     
     // MARK: Add Views To Super View

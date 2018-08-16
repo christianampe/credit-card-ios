@@ -15,6 +15,13 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cardView.setStyle(.fill(backgroundColor: .gray))
+    }
+}
+
+extension ViewController {
     @IBAction func didEnterText(_ sender: Any) {
         cardView.number = textField.text ?? ""
     }
