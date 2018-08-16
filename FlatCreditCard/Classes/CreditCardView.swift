@@ -19,39 +19,59 @@ open class CreditCardView: UIView {
     private weak var nameLabel: UILabel!
     
     // MARK: Properties
-    open var viewModel: CreditCardViewModel!
+    private var viewModel: CreditCardViewModel?
     
     // MARK: IBInspectables
     @IBInspectable
-    private var number: String = CreditCard.default.number {
+    public var number: String = CreditCard.default.number {
         didSet {
-            numberLabel.text = number
+            guard let viewModel = viewModel else {
+                numberLabel.text = number
+                return
+            }
+            
+            viewModel.updateNumber(to: number)
         }
     }
     
     @IBInspectable
-    private var cvv: String = CreditCard.default.cvv {
+    public var cvv: String = CreditCard.default.cvv {
         didSet {
-            cvvLabel.text = cvv
+            guard let viewModel = viewModel else {
+                cvvLabel.text = cvv
+                return
+            }
+            
+            viewModel.updateCVV(to: cvv)
         }
     }
     
     @IBInspectable
-    private var expiration: String = CreditCard.default.expiration {
+    public var expiration: String = CreditCard.default.expiration {
         didSet {
-            expirationLabel.text = expiration
+            guard let viewModel = viewModel else {
+                expirationLabel.text = expiration
+                return
+            }
+            
+            viewModel.updateExpiration(to: expiration)
         }
     }
     
     @IBInspectable
-    private var name: String = CreditCard.default.name {
+    public var name: String = CreditCard.default.name {
         didSet {
-            nameLabel.text = name
+            guard let viewModel = viewModel else {
+                nameLabel.text = name
+                return
+            }
+            
+            viewModel.updateName(to: name)
         }
     }
     
     @IBInspectable
-    private var logo: UIImage? = nil {
+    public var logo: UIImage? = nil {
         didSet {
             guard let image = logo else {
                 return
@@ -102,8 +122,6 @@ open class CreditCardView: UIView {
         initViews()
         addViews()
         addConstraints()
-        setupCard(card)
-        setupViewModel()
     }
     
     // MARK: Storyboard Initalizer
@@ -135,8 +153,13 @@ open class CreditCardView: UIView {
         initViews()
         addViews()
         addConstraints()
-        setupCard()
-        setupViewModel()
+    }
+}
+
+// MARK: - Public Setup Methods
+public extension CreditCardView {
+    func set(viewModel: CreditCardViewModel) {
+        self.viewModel = viewModel
     }
 }
 
@@ -258,17 +281,6 @@ private extension CreditCardView {
         cardLogo.topAnchor.constraint(equalTo: cardView.topAnchor, constant: cardView.frame.height/10).isActive = true
         cardLogo.heightAnchor.constraint(equalToConstant: cardView.frame.height/5).isActive = true
         cardLogo.widthAnchor.constraint(equalToConstant: cardView.frame.width/5).isActive = true
-    }
-    
-    func setupCard(_ card: CreditCard = .default) {
-        number = card.number
-        cvv = card.cvv
-        expiration = card.expiration
-        name = card.name
-    }
-    
-    func setupViewModel() {
-        viewModel = CreditCardViewModel(self)
     }
 }
 

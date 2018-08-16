@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 
 extension ViewController {
     @IBAction func didEnterText(_ sender: Any) {
-        cardView.viewModel.updateNumber(to: textField.text ?? "")
+        cardView.number = textField.text ?? ""
     }
 }
 
