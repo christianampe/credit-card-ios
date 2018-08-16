@@ -27,7 +27,7 @@ public extension CreditCardViewNumberGroupingStyle {
             var input: String = input
             var output: String.SubSequence = ""
             
-            for group in grouping {
+            for (index, group) in grouping.enumerated() {
                 guard !input.isEmpty else {
                     break
                 }
@@ -38,7 +38,10 @@ public extension CreditCardViewNumberGroupingStyle {
                 }
                 
                 output.append(contentsOf: input.prefix(group))
-                output.append(contentsOf: separator)
+                
+                if index < grouping.count - 1 {
+                    output.append(contentsOf: separator)
+                }
                 
                 input.removeFirst(group)
             }
