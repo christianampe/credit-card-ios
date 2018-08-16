@@ -23,35 +23,35 @@ open class CreditCardView: UIView {
     
     // MARK: IBInspectables
     @IBInspectable
-    open var number: String = CreditCard.default.number {
+    private var number: String = CreditCard.default.number {
         didSet {
             numberLabel.text = number
         }
     }
     
     @IBInspectable
-    open var cvv: String = CreditCard.default.cvv {
+    private var cvv: String = CreditCard.default.cvv {
         didSet {
             cvvLabel.text = cvv
         }
     }
     
     @IBInspectable
-    open var expiration: String = CreditCard.default.expiration {
+    private var expiration: String = CreditCard.default.expiration {
         didSet {
             expirationLabel.text = expiration
         }
     }
     
     @IBInspectable
-    open var name: String = CreditCard.default.name {
+    private var name: String = CreditCard.default.name {
         didSet {
             nameLabel.text = name
         }
     }
     
     @IBInspectable
-    open var logo: UIImage? = nil {
+    private var logo: UIImage? = nil {
         didSet {
             guard let image = logo else {
                 return
@@ -103,6 +103,7 @@ open class CreditCardView: UIView {
         addViews()
         addConstraints()
         setupCard(card)
+        setupViewModel()
     }
     
     // MARK: Storyboard Initalizer
@@ -135,6 +136,7 @@ open class CreditCardView: UIView {
         addViews()
         addConstraints()
         setupCard()
+        setupViewModel()
     }
 }
 
@@ -263,6 +265,10 @@ private extension CreditCardView {
         cvv = card.cvv
         expiration = card.expiration
         name = card.name
+    }
+    
+    func setupViewModel() {
+        viewModel = CreditCardViewModel(delegate: self)
     }
 }
 

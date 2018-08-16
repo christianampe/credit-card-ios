@@ -11,5 +11,12 @@ import FlatCreditCard
 
 class ViewController: UIViewController {
     @IBOutlet weak var cardView: CreditCardView!
+    @IBOutlet weak var textField: UITextField!
+}
+
+extension ViewController {
+    @IBAction func didEnterText(_ sender: Any) {
+        cardView.viewModel.updateNumber(to: textField.text ?? "")
+    }
 }
 

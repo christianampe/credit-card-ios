@@ -28,16 +28,29 @@
                                     <constraint firstAttribute="height" constant="200" id="LIA-lv-HRB"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Account Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w0b-qT-hIX">
+                                <rect key="frame" x="24" y="260" width="327" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEnterText:" destination="vXZ-lx-hvc" eventType="editingChanged" id="K3i-B6-gNH"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="gr9-Y3-OYu" secondAttribute="trailing" constant="24" id="2WU-Zz-4Yq"/>
+                            <constraint firstItem="w0b-qT-hIX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="24" id="9K7-PE-3om"/>
+                            <constraint firstItem="w0b-qT-hIX" firstAttribute="top" secondItem="gr9-Y3-OYu" secondAttribute="bottom" constant="8" id="Clu-rh-umr"/>
                             <constraint firstItem="gr9-Y3-OYu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="MC0-bB-DRT"/>
                             <constraint firstItem="gr9-Y3-OYu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="24" id="T28-rx-Kpv"/>
+                            <constraint firstAttribute="trailing" secondItem="w0b-qT-hIX" secondAttribute="trailing" constant="24" id="zt4-Lh-xqt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cardView" destination="gr9-Y3-OYu" id="POc-ba-ymw"/>
+                        <outlet property="textField" destination="w0b-qT-hIX" id="C16-qu-YaB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
