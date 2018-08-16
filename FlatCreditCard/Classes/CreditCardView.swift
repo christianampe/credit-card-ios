@@ -96,8 +96,7 @@ open class CreditCardView: UIView {
     }
     
     // MARK: Programmatic Initalizer
-    public init(_ frame: CGRect,
-                card: CreditCard = .default) {
+    public init(_ frame: CGRect) {
 
         // Create Views
         let cardView = UIView()
@@ -123,6 +122,7 @@ open class CreditCardView: UIView {
         
         // Setup Methods
         initViews()
+        styleViews(.default)
         addViews()
         addConstraints()
     }
@@ -154,6 +154,7 @@ open class CreditCardView: UIView {
         
         // Setup Methods
         initViews()
+        styleViews(.default)
         addViews()
         addConstraints()
     }
@@ -161,24 +162,24 @@ open class CreditCardView: UIView {
 
 // MARK: - Public Setup Methods
 public extension CreditCardView {
-    func set(viewModel: CreditCardViewModel) {
+    func setViewModel(_ viewModel: CreditCardViewModel) {
         self.viewModel = viewModel
+    }
+    
+    func setStyle(_ style: CreditCardViewStyle = .default) {
+        styleViews(style)
     }
 }
 
 // MARK: - Private Setup Methods
 private extension CreditCardView {
     
-    // MARK: Style Views
+    // MARK: Inital View Setup
     func initViews() {
-        cardView.layer.borderWidth = 1
         cardView.layer.cornerRadius = 8
-        cardView.layer.borderColor = UIColor.black.cgColor
         
         cardLogo.contentMode = .scaleAspectFit
         cardLogo.clipsToBounds = true
-        cardLogo.layer.borderWidth = 1
-        cardLogo.layer.borderColor = UIColor.black.cgColor
         
         numberLabel.adjustsFontSizeToFitWidth = true
         numberLabel.minimumScaleFactor = 0.1
@@ -199,6 +200,13 @@ private extension CreditCardView {
         nameLabel.minimumScaleFactor = 0.1
         nameLabel.lineBreakMode = .byClipping
         nameLabel.numberOfLines = 0
+    }
+    
+    // MARK: Style Views
+    func styleViews(_ style: CreditCardViewStyle) {
+        cardView.layer.borderWidth = style.borderWidth
+        cardView.backgroundColor = style.backgroundColor
+        cardView.layer.borderColor = style.borderColor.cgColor
     }
     
     // MARK: Add Views To Super View
