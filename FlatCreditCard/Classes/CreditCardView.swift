@@ -88,12 +88,10 @@ open class CreditCardView: UIView {
     
     // MARK: Designable Initalizers
     public convenience init() {
-        
         self.init(frame: CGRect.zero)
     }
     
     public override convenience init(frame: CGRect) {
-        
         self.init(frame: frame)
     }
     
