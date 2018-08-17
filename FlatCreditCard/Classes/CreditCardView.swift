@@ -86,18 +86,21 @@ open class CreditCardView: UIView {
         }
     }
     
-    // MARK: Designable Initalizers
+    // MARK: Convinence Initalizer
     public convenience init() {
         self.init(frame: CGRect.zero)
     }
     
+    // MARK: Designable Initalizer
     public override convenience init(frame: CGRect) {
-        self.init(frame: frame)
+        self.init(frame,
+                  style: .default)
     }
     
     // MARK: Programmatic Initalizer
-    public init(_ frame: CGRect) {
-
+    public init(_ frame: CGRect,
+                style: CreditCardViewStyle) {
+        
         // Create Views
         let cardView = UIView()
         self.cardView = cardView
@@ -122,7 +125,7 @@ open class CreditCardView: UIView {
         
         // Setup Methods
         initViews()
-        styleView(.default)
+        styleView(style)
         setViewProperties()
         addViews()
         addConstraints()
@@ -299,7 +302,7 @@ private extension CreditCardView {
     // MARK: Add Constraints To Number Label
     func addNumberLabelConstraints() {
         numberLabel.translatesAutoresizingMaskIntoConstraints = false
-
+        
         numberLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
         numberLabel.bottomAnchor.constraint(equalTo: cvvLabel.topAnchor).isActive = true
         numberLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/10).isActive = true
