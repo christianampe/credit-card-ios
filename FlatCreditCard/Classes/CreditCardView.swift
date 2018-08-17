@@ -172,6 +172,17 @@ public extension CreditCardView {
     }
 }
 
+// MARK: - Public Reload Methods
+public extension CreditCardView {
+    func reload() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        
+        viewModel.reload()
+    }
+}
+
 // MARK: - Private Setup Methods
 private extension CreditCardView {
     

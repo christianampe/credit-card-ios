@@ -25,6 +25,9 @@ public protocol CreditCardViewModel: class, CreditCardViewModelDataSource {
     func updateExpiration(to value: String)
     func updateName(to value: String)
     func updateLogo(to value: UIImage?)
+    
+    // MARK: Reload Methods
+    func reload()
 }
 
 // MARK: - Default CreditCardViewModelDataSource Conformance
@@ -55,30 +58,41 @@ public extension CreditCardViewModel {
     func updateNumber(to value: String) {
         creditCard.number = value
         
-        delegate.numberUpdated(to: number(for: creditCard))
+        reload()
     }
     
     func updateCVV(to value: String) {
         creditCard.cvv = value
         
-        delegate.cvvUpdated(to: cvv(for: creditCard))
+        reload()
     }
     
     func updateExpiration(to value: String) {
         creditCard.expiration = value
         
-        delegate.expirationUpdated(to: expiration(for: creditCard))
+        reload()
     }
     
     func updateName(to value: String) {
         creditCard.name = value
         
-        delegate.nameUpdated(to: name(for: creditCard))
+        reload()
     }
     
     func updateLogo(to value: UIImage?) {
         creditCard.logo = value
         
+        reload()
+    }
+}
+
+// MARK: - Default Reload Methods
+public extension CreditCardViewModel {
+    func reload() {
+        delegate.numberUpdated(to: number(for: creditCard))
+        delegate.cvvUpdated(to: cvv(for: creditCard))
+        delegate.expirationUpdated(to: expiration(for: creditCard))
+        delegate.nameUpdated(to: name(for: creditCard))
         delegate.logoUpdated(to: logo(for: creditCard))
     }
 }
