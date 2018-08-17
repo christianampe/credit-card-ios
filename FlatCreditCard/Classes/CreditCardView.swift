@@ -19,7 +19,7 @@ open class CreditCardView: UIView {
     private weak var nameLabel: UILabel!
     
     // MARK: Properties
-    private var viewModel: CreditCardViewModel!
+    public var viewModel: CreditCardViewModel!
     
     // MARK: IBInspectables
     @IBInspectable
