@@ -14,7 +14,7 @@ public class CreditCardViewConstants {
 
 // MARK: Credit Card Default Values
 public extension CreditCardViewConstants {
-    public static let defaultNumber: String = "4000  2468  8080  0242"
+    public static let defaultNumber: String = "4000246880800242"
     public static let defaultCVV: String = "046"
     public static let defaultExpiration: String = "12/24"
     public static let defaultName: String = "Christian Ampe"

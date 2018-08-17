@@ -15,6 +15,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		BF47C74A21265A08006587CD /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47C74921265A08006587CD /* CardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		8DBD45B4B851BC9A23A1EFA5 /* Pods_FlatCreditCard_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlatCreditCard_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		951BF42BC59A60385E85BD8E /* Pods-FlatCreditCard_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatCreditCard_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlatCreditCard_Example/Pods-FlatCreditCard_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7ECE6F11C13464BF2D8909 /* Pods_FlatCreditCard_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlatCreditCard_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF47C74921265A08006587CD /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		D35683EEA1129287B13D3097 /* Pods-FlatCreditCard_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatCreditCard_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlatCreditCard_Tests/Pods-FlatCreditCard_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				BF47C74921265A08006587CD /* CardViewModel.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				BF47C74A21265A08006587CD /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
