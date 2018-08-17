@@ -29,20 +29,24 @@ public protocol CreditCardViewModel: class, CreditCardViewModelDataSource {
 
 // MARK: - Default CreditCardViewModelDataSource Conformance
 public extension CreditCardViewModel {
-    func number(for input: String) -> String {
-        return input
+    func number(for card: CreditCard) -> String {
+        return card.number
     }
     
-    func cvv(for input: String) -> String {
-        return input
+    func cvv(for card: CreditCard) -> String {
+        return card.cvv
     }
     
-    func expiration(for input: String) -> String {
-        return input
+    func expiration(for card: CreditCard) -> String {
+        return card.expiration
     }
     
-    func name(for input: String) -> String {
-        return input
+    func name(for card: CreditCard) -> String {
+        return card.name
+    }
+    
+    func logo(for card: CreditCard) -> UIImage? {
+        return card.logo
     }
 }
 
@@ -51,30 +55,30 @@ public extension CreditCardViewModel {
     func updateNumber(to value: String) {
         creditCard.number = value
         
-        delegate.numberUpdated(to: number(for: value))
+        delegate.numberUpdated(to: number(for: creditCard))
     }
     
     func updateCVV(to value: String) {
         creditCard.cvv = value
         
-        delegate.cvvUpdated(to: cvv(for: value))
+        delegate.cvvUpdated(to: cvv(for: creditCard))
     }
     
     func updateExpiration(to value: String) {
         creditCard.expiration = value
         
-        delegate.expirationUpdated(to: expiration(for: value))
+        delegate.expirationUpdated(to: expiration(for: creditCard))
     }
     
     func updateName(to value: String) {
         creditCard.name = value
         
-        delegate.nameUpdated(to: name(for: value))
+        delegate.nameUpdated(to: name(for: creditCard))
     }
     
     func updateLogo(to value: UIImage?) {
         creditCard.logo = value
         
-        delegate.logoUpdated(to: value)
+        delegate.logoUpdated(to: logo(for: creditCard))
     }
 }

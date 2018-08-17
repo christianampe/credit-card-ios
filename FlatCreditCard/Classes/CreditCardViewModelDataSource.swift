@@ -8,9 +8,9 @@
 import Foundation
 
 public protocol CreditCardViewModelDataSource {
-    func number(for input: String) -> String
-    func cvv(for input: String) -> String
-    func expiration(for input: String) -> String
-    func name(for input: String) -> String
-    func logo(for input: String) -> UIImage?
+    func number(for card: CreditCard) -> String
+    func cvv(for card: CreditCard) -> String
+    func expiration(for card: CreditCard) -> String
+    func name(for card: CreditCard) -> String
+    func logo(for card: CreditCard) -> UIImage?
 }
