@@ -23,6 +23,6 @@ extension ViewController {
 
 extension ViewController {
     @IBAction func didEnterText(_ sender: Any) {
-        creditView.viewModel.updateNumber(to: textField.text ?? "")
+        creditView.number = textField.text ?? ""
     }
 }
