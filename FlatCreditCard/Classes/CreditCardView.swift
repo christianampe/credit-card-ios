@@ -122,7 +122,7 @@ open class CreditCardView: UIView {
         
         // Setup Methods
         initViews()
-        styleViews(.default)
+        styleView(.default)
         setViewProperties()
         addViews()
         addConstraints()
@@ -155,7 +155,7 @@ open class CreditCardView: UIView {
         
         // Setup Methods
         initViews()
-        styleViews(.default)
+        styleView(.default)
         setViewProperties()
         addViews()
         addConstraints()
@@ -169,7 +169,7 @@ public extension CreditCardView {
     }
     
     func setStyle(_ style: CreditCardViewStyle) {
-        styleViews(style)
+        styleView(style)
     }
 }
 
@@ -205,7 +205,7 @@ private extension CreditCardView {
     }
     
     // MARK: Style Views
-    func styleViews(_ style: CreditCardViewStyle) {
+    func styleView(_ style: CreditCardViewStyle) {
         cardView.layer.borderWidth = style.borderWidth
         cardView.backgroundColor = style.backgroundColor
         cardView.layer.borderColor = style.borderColor.cgColor
