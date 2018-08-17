@@ -21,22 +21,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gr9-Y3-OYu" customClass="CreditCardView" customModule="FlatCreditCard">
-                                <rect key="frame" x="24" y="52" width="327" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Io-y5-jBm">
+                                <rect key="frame" x="24" y="68" width="327" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="LIA-lv-HRB"/>
+                                    <constraint firstAttribute="height" constant="200" id="9eB-aR-CQK"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="4000400040004000"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="cvv" value="400"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="expiration" value="12/24"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="Christian Ampe"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="logo" value="maestro"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Account Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w0b-qT-hIX">
-                                <rect key="frame" x="24" y="260" width="327" height="17"/>
+                                <rect key="frame" x="24" y="276" width="327" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -47,16 +40,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gr9-Y3-OYu" secondAttribute="trailing" constant="24" id="2WU-Zz-4Yq"/>
+                            <constraint firstItem="w0b-qT-hIX" firstAttribute="top" secondItem="6Io-y5-jBm" secondAttribute="bottom" constant="8" id="2tP-EZ-o7s"/>
                             <constraint firstItem="w0b-qT-hIX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="24" id="9K7-PE-3om"/>
-                            <constraint firstItem="w0b-qT-hIX" firstAttribute="top" secondItem="gr9-Y3-OYu" secondAttribute="bottom" constant="8" id="Clu-rh-umr"/>
-                            <constraint firstItem="gr9-Y3-OYu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="MC0-bB-DRT"/>
-                            <constraint firstItem="gr9-Y3-OYu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="24" id="T28-rx-Kpv"/>
+                            <constraint firstItem="6Io-y5-jBm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="24" id="AuN-rh-eZy"/>
+                            <constraint firstItem="6Io-y5-jBm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="24" id="ESz-Am-fxe"/>
+                            <constraint firstAttribute="trailing" secondItem="6Io-y5-jBm" secondAttribute="trailing" constant="24" id="hMi-uG-X9U"/>
                             <constraint firstAttribute="trailing" secondItem="w0b-qT-hIX" secondAttribute="trailing" constant="24" id="zt4-Lh-xqt"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cardView" destination="gr9-Y3-OYu" id="POc-ba-ymw"/>
                         <outlet property="textField" destination="w0b-qT-hIX" id="C16-qu-YaB"/>
                     </connections>
                 </viewController>
@@ -65,7 +57,4 @@
             <point key="canvasLocation" x="136.80000000000001" y="132.26600985221674"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="maestro" width="1000" height="822"/>
-    </resources>
 </document>
