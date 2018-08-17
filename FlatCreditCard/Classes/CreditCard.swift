@@ -12,13 +12,11 @@ public struct CreditCard {
     let cvv: String
     let expiration: String
     let name: String
-    let logo: UIImage?
 }
 
 public extension CreditCard {
     public static let `default` = CreditCard(number: CreditCardViewConstants.defaultNumber,
                                              cvv: CreditCardViewConstants.defaultCVV,
                                              expiration: CreditCardViewConstants.defaultExpiration,
-                                             name: CreditCardViewConstants.defaultName,
-                                             logo: CreditCardViewConstants.defaultLogo)
+                                             name: CreditCardViewConstants.defaultName)
 }
