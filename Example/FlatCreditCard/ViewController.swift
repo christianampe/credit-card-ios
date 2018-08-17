@@ -10,20 +10,19 @@ import UIKit
 import FlatCreditCard
 
 class ViewController: UIViewController {
-    @IBOutlet weak var cardView: CreditCardView!
+    @IBOutlet weak var creditView: CreditCardView!
     @IBOutlet weak var textField: UITextField!
 }
 
 extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        cardView.setStyle(.fill(backgroundColor: .gray))
     }
 }
 
 extension ViewController {
     @IBAction func didEnterText(_ sender: Any) {
-        cardView.number = textField.text ?? ""
+        creditView.number = textField.text ?? ""
     }
 }
 
