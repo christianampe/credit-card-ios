@@ -19,11 +19,7 @@ public protocol CreditCardViewModel: class, CreditCardViewModelDataSource {
     var delegate: CreditCardViewModelDelegate { get set }
     
     // MARK: Credit Card Storage Properties
-    var number: String { get }
-    var cvv: String { get }
-    var expiration: String { get }
-    var name: String { get }
-    var logo: UIImage? { get }
+    var creditCard: CreditCard { get set }
     
     // MARK: Credit Card Style Properties
     var cvvSecurityStyle: CardCVVSecurityStyle { get }
@@ -60,3 +56,27 @@ public extension CreditCardViewModel {
         return UIImage()
     }
 }
+
+public extension CreditCardViewModel {
+    func updateNumber(to value: String) {
+        
+    }
+    
+    func updateCVV(to value: String) {
+        
+    }
+    
+    func updateExpiration(to value: String) {
+        
+    }
+    
+    func updateName(to value: String) {
+        
+    }
+    
+    func updateLogo(to value: UIImage?) {
+        
+    }
+}
+
+
