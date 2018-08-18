@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                  = 'FlatCreditCard'
-    s.version               = '0.0.2'
+    s.version               = '0.0.3'
     s.summary               = 'A view for credit cards.'
     s.description           = 'A highly flexible credit view which allows for a view model to be integrated to allow for custom processing.'
     s.homepage              = 'https://github.com/educrate/credit-card-ios'
