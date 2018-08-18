@@ -15,14 +15,12 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        creditView.setViewModel(CardViewModel(delegate: creditView))
-    }
-}
-
-extension ViewController {
     @IBAction func didEnterText(_ sender: Any) {
-        creditView.number = textField.text ?? ""
+        guard let text = textField.text else {
+            creditView.number = ""
+            return
+        }
+        
+        creditView.number = text
     }
 }
