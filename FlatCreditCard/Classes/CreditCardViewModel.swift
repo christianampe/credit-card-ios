@@ -58,31 +58,31 @@ public extension CreditCardViewModel {
     func updateNumber(to value: String) {
         creditCard.number = value
         
-        reload()
+        delegate.numberUpdated(to: number(for: creditCard))
     }
     
     func updateCVV(to value: String) {
         creditCard.cvv = value
         
-        reload()
+        delegate.cvvUpdated(to: cvv(for: creditCard))
     }
     
     func updateExpiration(to value: String) {
         creditCard.expiration = value
         
-        reload()
+        delegate.expirationUpdated(to: expiration(for: creditCard))
     }
     
     func updateName(to value: String) {
         creditCard.name = value
         
-        reload()
+        delegate.nameUpdated(to: name(for: creditCard))
     }
     
     func updateLogo(to value: UIImage?) {
         creditCard.logo = value
         
-        reload()
+        delegate.logoUpdated(to: logo(for: creditCard))
     }
 }
 
