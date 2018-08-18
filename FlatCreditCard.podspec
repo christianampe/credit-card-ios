@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
     s.name                  = 'FlatCreditCard'
     s.version               = '0.0.1'
-    s.summary               = 'A short description of FlatCreditCard.'
-    s.description           = 'A longer description of FlatCreditCard.'
+    s.summary               = 'A view for credit cards.'
+    s.description           = 'A highly flexible credit view which allows for a view model to be integrated to allow for custom processing.'
     s.homepage              = 'https://github.com/christianampe/FlatCreditCard'
     s.license               = { :type => 'MIT', :file => 'LICENSE' }
     s.author                = { 'christianampe' => 'christianampe.work@gmail.com' }
