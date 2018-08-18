@@ -9,10 +9,6 @@ import UIKit
 
 public protocol CreditCardViewModel: class, CreditCardViewModelDataSource {
     
-    // MARK: Initalizer
-    init(_ card : CreditCard,
-         delegate: CreditCardViewModelDelegate)
-    
     // MARK: Delegate Property
     var delegate: CreditCardViewModelDelegate { get set }
     
