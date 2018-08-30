@@ -1,9 +1,9 @@
 {
   "name": "FlatCreditCard",
-  "version": "0.0.1",
-  "summary": "A short description of FlatCreditCard.",
-  "description": "A longer description of FlatCreditCard.",
-  "homepage": "https://github.com/christianampe/FlatCreditCard",
+  "version": "0.0.4",
+  "summary": "A view for credit cards.",
+  "description": "A highly flexible credit view which allows for a view model to be integrated to allow for custom processing.",
+  "homepage": "https://github.com/educrate/credit-card-ios",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,12 +12,13 @@
     "christianampe": "christianampe.work@gmail.com"
   },
   "source": {
-    "git": "https://github.com/christianampe/FlatCreditCard.git",
-    "tag": "0.0.1"
+    "git": "https://github.com/educrate/credit-card-ios.git",
+    "tag": "0.0.4"
   },
   "platforms": {
     "ios": "9.3"
   },
   "swift_version": "4.1",
-  "source_files": "FlatCreditCard/Classes/**/*"
+  "source_files": "FlatCreditCard/Classes/**/*",
+  "resources": "FlatCreditCard/Assets/*{.png,.xcassets}"
 }
