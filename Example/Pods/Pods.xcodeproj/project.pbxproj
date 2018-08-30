@@ -19,7 +19,7 @@
 		A43EFCCF423FB5B1895ABF2E1202D8BA /* CreditCardViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2294ADDA1C26A9B493F6FFD8EB89FB8F /* CreditCardViewStyle.swift */; };
 		B374F0374ACB2156F644D864FC42D8B0 /* Pods-FlatCreditCard_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 65078F504552411BC4EFAC4AD38499E1 /* Pods-FlatCreditCard_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF130B482137C12C0086A8E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF130B472137C12C0086A8E8 /* Images.xcassets */; };
-		BF130B4A2137C1AD0086A8E8 /* ImageExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF130B492137C1AD0086A8E8 /* ImageExtractor.swift */; };
+		BF130B4C2137C5A90086A8E8 /* ImageExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF130B4B2137C5A80086A8E8 /* ImageExtractor.swift */; };
 		C38858E3124CAF9D4B76F2FCC182180A /* CreditCardViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A9E5F3D7501FD4A24B04905E5BA23 /* CreditCardViewModelDelegate.swift */; };
 		C4216CD2383B396A110B840B5F0ABFD4 /* Pods-FlatCreditCard_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2944233335E8408E2035C09F14AC5940 /* Pods-FlatCreditCard_Tests-dummy.m */; };
 		C7DB1FB71A98F5E1F14FC5FD8E333D93 /* CreditCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653B35B36984C1F99B5DDEBECED55A52 /* CreditCardViewModel.swift */; };
@@ -81,7 +81,7 @@
 		AF9F8382D07526935E30F883E6CB202B /* FlatCreditCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlatCreditCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81C06F93DAAF1FE5A51F8B38CC0CFBF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF130B472137C12C0086A8E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BF130B492137C1AD0086A8E8 /* ImageExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtractor.swift; sourceTree = "<group>"; };
+		BF130B4B2137C5A80086A8E8 /* ImageExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageExtractor.swift; path = FlatCreditCard/Classes/ImageExtractor.swift; sourceTree = "<group>"; };
 		C144BAC814F0F68EBD01253AA2F9CC54 /* Pods-FlatCreditCard_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlatCreditCard_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1D47FAA7F4DBFE31DB3FA6506708860 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D02BB65D8FF0D019E3D88F79045BF8CE /* Pods-FlatCreditCard_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlatCreditCard_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 				605B1D1DCC1B954F654868FA5488E304 /* CreditCardViewModelDataSource.swift */,
 				A00A9E5F3D7501FD4A24B04905E5BA23 /* CreditCardViewModelDelegate.swift */,
 				2294ADDA1C26A9B493F6FFD8EB89FB8F /* CreditCardViewStyle.swift */,
-				BF130B492137C1AD0086A8E8 /* ImageExtractor.swift */,
+				BF130B4B2137C5A80086A8E8 /* ImageExtractor.swift */,
 				43857237D08129BDFD061EB74800CE71 /* Pod */,
 				C9A9E512CC3C84F5C5F1E5C7566F23B5 /* Resources */,
 				3D5E6888453ABBA2D3A366F0E3A97B0E /* Support Files */,
@@ -401,7 +401,7 @@
 			files = (
 				2EC8072A23F4601D929FA4D63934CA7E /* CreditCard.swift in Sources */,
 				5196486853037802B2F52485E877726E /* CreditCardView.swift in Sources */,
-				BF130B4A2137C1AD0086A8E8 /* ImageExtractor.swift in Sources */,
+				BF130B4C2137C5A90086A8E8 /* ImageExtractor.swift in Sources */,
 				D140BDC7626B54ABEB8E3D13C43E65BF /* CreditCardViewConstants.swift in Sources */,
 				C7DB1FB71A98F5E1F14FC5FD8E333D93 /* CreditCardViewModel.swift in Sources */,
 				05F121C69837C3F6159522234742E28E /* CreditCardViewModelDataSource.swift in Sources */,
