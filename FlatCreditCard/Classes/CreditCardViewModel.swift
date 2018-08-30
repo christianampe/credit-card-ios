@@ -21,6 +21,7 @@ public protocol CreditCardViewModel: class, CreditCardViewModelDataSource {
     func updateExpiration(to value: String)
     func updateName(to value: String)
     func updateLogo(to value: UIImage?)
+    func updateStyle(to style: CreditCardViewStyle)
     
     // MARK: Reload Methods
     func reload()
@@ -46,6 +47,10 @@ public extension CreditCardViewModel {
     
     func logo(for card: CreditCard) -> UIImage? {
         return card.logo
+    }
+    
+    func style(for card: CreditCard) -> CreditCardViewStyle {
+        return .default
     }
 }
 
@@ -80,6 +85,10 @@ public extension CreditCardViewModel {
         
         delegate.logoUpdated(to: logo(for: creditCard))
     }
+    
+    func updateStyle(to style: CreditCardViewStyle) {
+        delegate.styleUpdated(to: style)
+    }
 }
 
 // MARK: - Default Reload Methods
@@ -90,5 +99,6 @@ public extension CreditCardViewModel {
         delegate.expirationUpdated(to: expiration(for: creditCard))
         delegate.nameUpdated(to: name(for: creditCard))
         delegate.logoUpdated(to: logo(for: creditCard))
+        delegate.styleUpdated(to: style(for: creditCard))
     }
 }

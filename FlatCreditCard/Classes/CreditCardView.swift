@@ -347,4 +347,8 @@ extension CreditCardView: CreditCardViewModelDelegate {
     public func logoUpdated(to logo: UIImage?) {
         cardLogo.image = logo
     }
+    
+    public func styleUpdated(to style: CreditCardViewStyle) {
+        setStyle(style)
+    }
 }
