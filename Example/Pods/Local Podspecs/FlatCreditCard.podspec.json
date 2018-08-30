@@ -1,6 +1,6 @@
 {
   "name": "FlatCreditCard",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "summary": "A view for credit cards.",
   "description": "A highly flexible credit view which allows for a view model to be integrated to allow for custom processing.",
   "homepage": "https://github.com/educrate/credit-card-ios",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/educrate/credit-card-ios.git",
-    "tag": "0.0.4"
+    "tag": "0.0.5"
   },
   "platforms": {
     "ios": "9.3"

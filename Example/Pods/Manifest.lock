@@ -1,5 +1,5 @@
 PODS:
-  - FlatCreditCard (0.0.4)
+  - FlatCreditCard (0.0.5)
 
 DEPENDENCIES:
   - FlatCreditCard (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FlatCreditCard: 12e0843dd8315fbaa880a839c494a90dfc894d4c
+  FlatCreditCard: ec847793ce680f24bdc7bcd3baa7152f4c906285
 
 PODFILE CHECKSUM: 32572dd84004654fa48bb34d23bbcd8d706e3c98
 
