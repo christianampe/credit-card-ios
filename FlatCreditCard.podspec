@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '9.3'
     s.swift_version         = '4.1'
     s.source_files = 'FlatCreditCard/Classes/**/*'
+    s.resources = 'FlatCreditCard/Assets/*{.png,.xcassets}'
 end
