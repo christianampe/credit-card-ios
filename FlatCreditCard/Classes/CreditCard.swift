@@ -9,11 +9,11 @@ import Foundation
 
 public class CreditCard {
     public var metadata: CreditCardMetadata
-    public var warning: String
+    public var warning: CreditCardWarning
     public var style: CreditCardViewStyle
     
     public init(metadata: CreditCardMetadata,
-                warning: String,
+                warning: CreditCardWarning,
                 style: CreditCardViewStyle) {
         
         self.metadata = metadata
@@ -24,6 +24,6 @@ public class CreditCard {
 
 public extension CreditCard {
     public static let `default` = CreditCard(metadata: .default,
-                                             warning: CreditCardViewConstants.defaultWarning,
+                                             warning: .default,
                                              style: .default)
 }

@@ -61,7 +61,7 @@ public extension CreditCardViewModel {
     }
     
     func updateWarning(to value: String) {
-        creditCard.warning = value
+        creditCard.warning.text = value
         
         delegate.warningUpdated(to: warning(for: creditCard))
     }
@@ -96,7 +96,7 @@ public extension CreditCardViewModel {
     }
     
     func warning(for card: CreditCard) -> String {
-        return card.warning
+        return card.warning.text
     }
     
     func style(for card: CreditCard) -> CreditCardViewStyle {

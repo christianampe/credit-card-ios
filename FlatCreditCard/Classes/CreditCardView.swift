@@ -24,7 +24,7 @@ open class CreditCardView: UIView {
     
     // MARK: IBInspectables
     @IBInspectable
-    public var number: String = CreditCardViewConstants.defaultName {
+    public var number: String = CreditCard.default.metadata.number {
         didSet {
             guard let viewModel = viewModel else {
                 numberLabel.text = number
@@ -36,7 +36,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    public var cvv: String = CreditCardViewConstants.defaultCVV {
+    public var cvv: String = CreditCard.default.metadata.cvv {
         didSet {
             guard let viewModel = viewModel else {
                 cvvLabel.text = cvv
@@ -48,7 +48,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    public var expiration: String = CreditCardViewConstants.defaultExpiration {
+    public var expiration: String = CreditCard.default.metadata.expiration {
         didSet {
             guard let viewModel = viewModel else {
                 expirationLabel.text = expiration
@@ -60,7 +60,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    public var name: String = CreditCardViewConstants.defaultName {
+    public var name: String = CreditCard.default.metadata.name {
         didSet {
             guard let viewModel = viewModel else {
                 nameLabel.text = name
@@ -72,7 +72,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    public var logo: UIImage? = CreditCardViewConstants.defaultLogo {
+    public var logo: UIImage? = CreditCard.default.metadata.logo {
         didSet {
             guard let viewModel = viewModel else {
                 cardLogo.image = logo
@@ -84,7 +84,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    public var warning: String = CreditCardViewConstants.defaultWarning {
+    public var warning: String = CreditCard.default.warning {
         didSet {
             guard let viewModel = viewModel else {
                 warningLabel.text = warning
