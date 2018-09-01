@@ -84,7 +84,20 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    public var warning: String = CreditCard.default.warning {
+    public var warning: String = CreditCard.default.warning.text {
+        didSet {
+            guard let viewModel = viewModel else {
+                warningLabel.text = warning
+                return
+            }
+            
+            viewModel.updateWarning(to: warning)
+        }
+    }
+    
+    // TODO: Implement Warning Color Update Properties Properly
+    @IBInspectable
+    public var warningColor: UIColor = CreditCard.default.warning.color {
         didSet {
             guard let viewModel = viewModel else {
                 warningLabel.text = warning
@@ -264,7 +277,7 @@ private extension CreditCardView {
         expiration = CreditCard.default.metadata.expiration
         name = CreditCard.default.metadata.name
         logo = CreditCard.default.metadata.logo
-        warning = CreditCard.default.warning
+        warning = CreditCard.default.warning.text
     }
     
     // MARK: Add Views To Super View
