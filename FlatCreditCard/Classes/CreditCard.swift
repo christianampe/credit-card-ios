@@ -8,30 +8,22 @@
 import Foundation
 
 public class CreditCard {
-    public var number: String
-    public var cvv: String
-    public var expiration: String
-    public var name: String
-    public var logo: UIImage?
+    public var metadata: CreditCardMetadata
+    public var warning: String
+    public var style: CreditCardViewStyle
     
-    public init(number: String,
-                cvv: String,
-                expiration: String,
-                name: String,
-                logo: UIImage?) {
+    public init(metadata: CreditCardMetadata,
+                warning: String,
+                style: CreditCardViewStyle) {
         
-        self.number = number
-        self.cvv = cvv
-        self.expiration = expiration
-        self.name = name
-        self.logo = logo
+        self.metadata = metadata
+        self.warning = warning
+        self.style = style
     }
 }
 
 public extension CreditCard {
-    public static let `default` = CreditCard(number: CreditCardViewConstants.defaultNumber,
-                                             cvv: CreditCardViewConstants.defaultCVV,
-                                             expiration: CreditCardViewConstants.defaultExpiration,
-                                             name: CreditCardViewConstants.defaultName,
-                                             logo: CreditCardViewConstants.defaultLogo)
+    public static let `default` = CreditCard(metadata: .default,
+                                             warning: CreditCardViewConstants.defaultWarning,
+                                             style: .default)
 }

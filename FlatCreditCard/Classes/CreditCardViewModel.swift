@@ -21,6 +21,8 @@ public protocol CreditCardViewModel: class, CreditCardViewModelDataSource {
     func updateExpiration(to value: String)
     func updateName(to value: String)
     func updateLogo(to value: UIImage?)
+    func updateWarning(to value: String)
+    func updateStyle(to style: CreditCardViewStyle)
     
     // MARK: Reload Methods
     func reload()
@@ -29,60 +31,76 @@ public protocol CreditCardViewModel: class, CreditCardViewModelDataSource {
 // MARK: - Default Update Method Implementation
 public extension CreditCardViewModel {
     func updateNumber(to value: String) {
-        creditCard.number = value
+        creditCard.metadata.number = value
         
         delegate.numberUpdated(to: number(for: creditCard))
     }
     
     func updateCVV(to value: String) {
-        creditCard.cvv = value
+        creditCard.metadata.cvv = value
         
         delegate.cvvUpdated(to: cvv(for: creditCard))
     }
     
     func updateExpiration(to value: String) {
-        creditCard.expiration = value
+        creditCard.metadata.expiration = value
         
         delegate.expirationUpdated(to: expiration(for: creditCard))
     }
     
     func updateName(to value: String) {
-        creditCard.name = value
+        creditCard.metadata.name = value
         
         delegate.nameUpdated(to: name(for: creditCard))
     }
     
     func updateLogo(to value: UIImage?) {
-        creditCard.logo = value
+        creditCard.metadata.logo = value
         
         delegate.logoUpdated(to: logo(for: creditCard))
+    }
+    
+    func updateWarning(to value: String) {
+        creditCard.warning = value
+        
+        delegate.warningUpdated(to: warning(for: creditCard))
+    }
+    
+    func updateStyle(to value: CreditCardViewStyle) {
+        creditCard.style = value
+        
+        delegate.styleUpdated(to: style(for: creditCard))
     }
 }
 
 // MARK: - Default CreditCardViewModelDataSource Conformance
 public extension CreditCardViewModel {
     func number(for card: CreditCard) -> String {
-        return card.number
+        return card.metadata.number
     }
     
     func cvv(for card: CreditCard) -> String {
-        return card.cvv
+        return card.metadata.cvv
     }
     
     func expiration(for card: CreditCard) -> String {
-        return card.expiration
+        return card.metadata.expiration
     }
     
     func name(for card: CreditCard) -> String {
-        return card.name
+        return card.metadata.name
     }
     
     func logo(for card: CreditCard) -> UIImage? {
-        return card.logo
+        return card.metadata.logo
+    }
+    
+    func warning(for card: CreditCard) -> String {
+        return card.warning
     }
     
     func style(for card: CreditCard) -> CreditCardViewStyle {
-        return .default
+        return card.style
     }
 }
 
@@ -94,6 +112,7 @@ public extension CreditCardViewModel {
         delegate.expirationUpdated(to: expiration(for: creditCard))
         delegate.nameUpdated(to: name(for: creditCard))
         delegate.logoUpdated(to: logo(for: creditCard))
+        delegate.warningUpdated(to: warning(for: creditCard))
         delegate.styleUpdated(to: style(for: creditCard))
     }
 }

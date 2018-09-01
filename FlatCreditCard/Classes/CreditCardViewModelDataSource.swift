@@ -13,5 +13,6 @@ public protocol CreditCardViewModelDataSource {
     func expiration(for card: CreditCard) -> String
     func name(for card: CreditCard) -> String
     func logo(for card: CreditCard) -> UIImage?
+    func warning(for card: CreditCard) -> String
     func style(for card: CreditCard) -> CreditCardViewStyle
 }

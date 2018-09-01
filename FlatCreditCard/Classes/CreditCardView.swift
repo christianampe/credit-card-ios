@@ -17,6 +17,7 @@ open class CreditCardView: UIView {
     private weak var cvvLabel: UILabel!
     private weak var expirationLabel: UILabel!
     private weak var nameLabel: UILabel!
+    private weak var warningLabel: UILabel!
     
     // MARK: Properties
     private var viewModel: CreditCardViewModel?
@@ -82,6 +83,18 @@ open class CreditCardView: UIView {
         }
     }
     
+    @IBInspectable
+    public var warning: String = CreditCardViewConstants.defaultWarning {
+        didSet {
+            guard let viewModel = viewModel else {
+                warningLabel.text = warning
+                return
+            }
+            
+            viewModel.updateWarning(to: warning)
+        }
+    }
+    
     // MARK: Convinence Initalizer
     public convenience init() {
         self.init(frame: CGRect.zero)
@@ -116,6 +129,9 @@ open class CreditCardView: UIView {
         let nameLabel = UILabel()
         self.nameLabel = nameLabel
         
+        let warningLabel = UILabel()
+        self.warningLabel = warningLabel
+        
         // Call Super Init
         super.init(frame: frame)
         
@@ -148,6 +164,9 @@ open class CreditCardView: UIView {
         
         let nameLabel = UILabel()
         self.nameLabel = nameLabel
+        
+        let warningLabel = UILabel()
+        self.warningLabel = warningLabel
         
         // Call Super Init
         super.init(coder: aDecoder)
@@ -212,6 +231,12 @@ private extension CreditCardView {
         nameLabel.minimumScaleFactor = 0.1
         nameLabel.lineBreakMode = .byClipping
         nameLabel.numberOfLines = 0
+        
+        warningLabel.adjustsFontSizeToFitWidth = true
+        warningLabel.minimumScaleFactor = 0.1
+        warningLabel.lineBreakMode = .byClipping
+        warningLabel.numberOfLines = 0
+        warningLabel.textAlignment = .center
     }
     
     // MARK: Style Views
@@ -229,15 +254,17 @@ private extension CreditCardView {
         cvvLabel.textColor = color
         expirationLabel.textColor = color
         nameLabel.textColor = color
+        warningLabel.textColor = color
     }
     
     // MARK: Set Inital Values
     func setViewProperties() {
-        number = CreditCard.default.number
-        cvv = CreditCard.default.cvv
-        expiration = CreditCard.default.expiration
-        name = CreditCard.default.name
-        logo = CreditCard.default.logo
+        number = CreditCard.default.metadata.number
+        cvv = CreditCard.default.metadata.cvv
+        expiration = CreditCard.default.metadata.expiration
+        name = CreditCard.default.metadata.name
+        logo = CreditCard.default.metadata.logo
+        warning = CreditCard.default.warning
     }
     
     // MARK: Add Views To Super View
@@ -248,6 +275,7 @@ private extension CreditCardView {
         addSubview(cvvLabel)
         addSubview(expirationLabel)
         addSubview(nameLabel)
+        addSubview(warningLabel)
     }
     
     // MARK: Call Add Constraints Methods
@@ -258,6 +286,7 @@ private extension CreditCardView {
         addCVVLabelConstraints()
         addDateLabelConstraints()
         addNameLabelConstraints()
+        addWarningLabelConstraints()
     }
     
     // MARK: Add Constraints To Card View
@@ -277,6 +306,16 @@ private extension CreditCardView {
         }
         
         cardView.layoutIfNeeded()
+    }
+    
+    // MARK: Add Constraints To Warning Label
+    func addWarningLabelConstraints() {
+        warningLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        warningLabel.topAnchor.constraint(equalTo: cardView.bottomAnchor, constant: cardView.frame.height/20).isActive = true
+        warningLabel.widthAnchor.constraint(equalTo: cardView.widthAnchor, multiplier: 0.8).isActive = true
+        warningLabel.centerXAnchor.constraint(equalTo: cardView.centerXAnchor).isActive = true
+        warningLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/20).isActive = true
     }
     
     // MARK: Add Constraints To Name Label
@@ -346,6 +385,10 @@ extension CreditCardView: CreditCardViewModelDelegate {
     
     public func logoUpdated(to logo: UIImage?) {
         cardLogo.image = logo
+    }
+    
+    public func warningUpdated(to warning: String) {
+        warningLabel.text = warning
     }
     
     public func styleUpdated(to style: CreditCardViewStyle) {
