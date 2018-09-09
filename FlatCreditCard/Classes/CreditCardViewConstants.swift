@@ -14,11 +14,11 @@ public class CreditCardViewConstants {
 
 // MARK: Credit Card Default Values
 public extension CreditCardViewConstants {
-    public static let defaultNumber: String = "4000400040004000"
-    public static let defaultCVV: String = "400"
-    public static let defaultExpiration: String = "12/24"
-    public static let defaultName: String = "Christian Ampe"
-    public static let defaultLogo: UIImage? = UIImage.for(#imageLiteral(resourceName: "mastercard"))
+    public static let defaultNumber: String = "•••• •••• •••• ••••"
+    public static let defaultCVV: String = "•••"
+    public static let defaultExpiration: String = "MM/YY"
+    public static let defaultName: String = "John Smith"
+    public static let defaultLogo: UIImage? = nil
     public static let defaultWarning: String = "please enter your credit card information"
 }
 

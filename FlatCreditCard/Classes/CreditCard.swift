@@ -27,3 +27,9 @@ public extension CreditCard {
                                              warning: .default,
                                              style: .default)
 }
+
+public extension CreditCard {
+    public static let empty = CreditCard(metadata: .empty,
+                                         warning: .default,
+                                         style: .default)
+}

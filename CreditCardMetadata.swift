@@ -36,3 +36,10 @@ public extension CreditCardMetadata {
                                                      logo: CreditCardViewConstants.defaultLogo)
 }
 
+public extension CreditCardMetadata {
+    public static let empty = CreditCardMetadata(number: "",
+                                                 cvv: "",
+                                                 expiration: "",
+                                                 name: "",
+                                                 logo: nil)
+}

@@ -13,6 +13,6 @@ public protocol CreditCardViewModelDelegate {
     func expirationUpdated(to expiration: String)
     func nameUpdated(to name: String)
     func logoUpdated(to logo: UIImage?)
-    func styleUpdated(to style: CreditCardViewStyle)
     func warningUpdated(to warning: String)
+    func styleUpdated(to style: CreditCardViewStyle)
 }

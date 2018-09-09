@@ -14,7 +14,7 @@ public enum CreditCardViewStyle {
 
 public extension CreditCardViewStyle {
     public static let defaultBorderWidth: CGFloat = 1
-    public static let defaultBorderColor: UIColor = .black
+    public static let defaultBorderColor: UIColor = .darkGray
 }
 
 public extension CreditCardViewStyle {
@@ -52,8 +52,8 @@ public extension CreditCardViewStyle {
     
     public var textColor: UIColor {
         switch self {
-        case .clear:
-            return .black
+        case .clear(_, let borderColor):
+            return borderColor
         case .fill:
             return .white
         }
